@@ -6,12 +6,17 @@
 
 body{
     height: 100vh;
-    background: darkgreen;
+    background: rgba(0, 100, 0, 0.541);
+}
+
+.header{
+    margin: 10px;
+    text-align: center;
 }
 
 #memory-game{
     width: 90%;
-    height: 640px;
+    height: 500px;
     border: 2px solid lime;
     display: flex;
     flex-wrap: wrap;
@@ -26,9 +31,7 @@ body{
 
 .front-face, .back-face{
     position: absolute;
-}
-
-img{
+    padding: 10px;
     width: 100%;
     height: 100%;
 }
