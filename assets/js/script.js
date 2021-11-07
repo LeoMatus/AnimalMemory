@@ -2,19 +2,20 @@ const cards = document.querySelectorAll('.memory-card');
 
 let hasFlippedCard = false;
 let firstCard, secondCard;
-let borardLock = false;
+let boardLock = false;
 
 
 //adds the flip class to the memory-cards
 function cardFlip() {
-    if (borardLock) return;
+    if (boardLock) return;
         
     this.classList.toggle('flip');
-
+    
     if (!hasFlippedCard){
         //first click
         hasFlippedCard = true;
         firstCard = this;
+        firstCard.removeEventListener("click", cardFlip);
     } else{
         //second click
         hasFlippedCard = false;
@@ -26,6 +27,7 @@ function cardFlip() {
 }
 
 function checkCardsForMatch() {
+    
     if (firstCard.dataset.image === secondCard.dataset.image){
         //if cards match
         disableMatchingCards();
@@ -41,12 +43,13 @@ function disableMatchingCards(){
 
 function cardUnflip() {
 
-    borardLock = true;
+    boardLock = true;
     //if cards dont match
     setTimeout(() => {
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
-        borardLock = false;
+        firstCard.addEventListener('click', cardFlip);
+        boardLock = false;
     },2000);
 } 
 
