@@ -3,6 +3,8 @@ const cards = document.querySelectorAll('.memory-card');
 let hasFlippedCard = false;
 let firstCard, secondCard;
 let boardLock = false;
+let attempts = 0;
+let maxAttempts = 2;
 
 
 //adds the flip class to the memory-cards
@@ -24,6 +26,10 @@ function cardFlip() {
 
         checkCardsForMatch() 
     }
+
+    if(attempts === maxAttempts){
+        gameOver()
+    }
 }
 
 function checkCardsForMatch() {
@@ -32,6 +38,8 @@ function checkCardsForMatch() {
         //if cards match
         disableMatchingCards();
     } else{
+        if(attempts != maxAttempts)
+        attempts += 1;
         cardUnflip();
     }  
 }
@@ -52,6 +60,11 @@ function cardUnflip() {
         boardLock = false;
     },2000);
 } 
+
+function gameOver(){
+    boardlock = true;
+    console.log("game over");
+}
 
 (function shuffleBoard(){
     cards.forEach (card => {
