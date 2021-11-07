@@ -18,12 +18,31 @@ function cardFlip() {
         secondCard = this;
         console.log(firstCard, secondCard);
 
-        if (firstCard.dataset.image === secondCard.dataset.image){
-            //if cards match
-            firstCard.removeEventListener("click", cardFlip)
-            secondCard.removeEventListener("click", cardFlip)
-        }
+        checkCardsForMatch() 
     }
 }
+
+function checkCardsForMatch() {
+    if (firstCard.dataset.image === secondCard.dataset.image){
+        //if cards match
+        disableMatchingCards();
+    } else{
+        cardUnflip();
+    }  
+}
+
+function disableMatchingCards(){
+    firstCard.removeEventListener("click", cardFlip);
+    secondCard.removeEventListener("click", cardFlip);
+}
+
+function cardUnflip() {
+    //if cards dont match
+    setTimeout(() => {
+        firstCard.classList.remove('flip');
+        secondCard.classList.remove('flip');
+    },2000);
+} 
+
 
 cards.forEach(card => card.addEventListener('click', cardFlip));
