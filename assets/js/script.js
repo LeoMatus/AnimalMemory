@@ -53,5 +53,12 @@ function cardUnflip() {
     },2000);
 } 
 
+(function shuffleBoard(){
+    cards.forEach (card => {
+        let randomPos = Math.floor(Math.random() * 24);
+        card.style.order = randomPos;
+    });
+})();
+
 
 cards.forEach(card => card.addEventListener('click', cardFlip));
