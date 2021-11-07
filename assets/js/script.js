@@ -2,10 +2,13 @@ const cards = document.querySelectorAll('.memory-card');
 
 let hasFlippedCard = false;
 let firstCard, secondCard;
+let borardLock = false;
 
 
 //adds the flip class to the memory-cards
 function cardFlip() {
+    if (borardLock) return;
+        
     this.classList.toggle('flip');
 
     if (!hasFlippedCard){
@@ -37,10 +40,13 @@ function disableMatchingCards(){
 }
 
 function cardUnflip() {
+
+    borardLock = true;
     //if cards dont match
     setTimeout(() => {
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
+        borardLock = false;
     },2000);
 } 
 
