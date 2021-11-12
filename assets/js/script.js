@@ -13,11 +13,10 @@ let selectedButton;
 document.addEventListener("DOMContentLoaded", function(){
     let buttons = document.getElementsByTagName("button");
 
-    updateRemainingAttempts(maxAttempts - attempts);
+    restartGame();
 
     for(let button of buttons){
         button.addEventListener("click", function(){
-
             if (this.classList.contains("green")){
                 maxAttempts = 20;
             } else if(this.classList.contains("yellow")){
@@ -29,8 +28,8 @@ document.addEventListener("DOMContentLoaded", function(){
                 selectedButton.classList.remove("selected");
             }
 
-
             updateRemainingAttempts(maxAttempts - attempts);
+
             selectedButton = this;
             this.classList.add("selected");
             restartGame();
@@ -86,7 +85,6 @@ function disableMatchingCards(){
 }
 
 function cardUnflip() {
-
     boardLock = true;
     //if cards dont match
     setTimeout(() => {
@@ -103,23 +101,38 @@ function gameOver(){
 }
 
 function restartGame(){
+
+    attempts = 0;
+
+    boardLock = true;
+
     unflipAllCards();
+    setTimeout(() =>{
 
-    //shuffle cards
+        shuffleBoard();
 
-    //add event handler
+        activateCards();
+
+        updateRemainingAttempts(maxAttempts);
+
+        boardLock = false;
+
+    },1000);
+
+    
+}
+
+function activateCards(){
+    cards.forEach(card => card.addEventListener('click', cardFlip));
 }
 
 function unflipAllCards(){
     cards.forEach(card => card.classList.remove("flip"));
 }
 
-(function shuffleBoard(){
+function shuffleBoard(){
     cards.forEach (card => {
         let randomPos = Math.floor(Math.random() * 24);
         card.style.order = randomPos;
     });
-})();
-
-
-cards.forEach(card => card.addEventListener('click', cardFlip));
+}
