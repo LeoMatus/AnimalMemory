@@ -5,6 +5,7 @@ let firstCard, secondCard;
 let boardLock = false;
 let attempts = 0;
 let maxAttempts = 20;
+let selectedButton;
 
 document.addEventListener("DOMContentLoaded", function(){
     let buttons = document.getElementsByTagName("button");
@@ -12,8 +13,6 @@ document.addEventListener("DOMContentLoaded", function(){
     for(let button of buttons){
         button.addEventListener("click", function(){
 
-            console.log(this.classList)
-        
             if (this.classList.contains("green")){
                 maxAttempts = 20;
             } else if(this.classList.contains("yellow")){
@@ -21,9 +20,14 @@ document.addEventListener("DOMContentLoaded", function(){
             } else if(this.classList.contains("red")){
                 maxAttempts = 10;
             }
+            if(selectedButton != undefined){
+                selectedButton.classList.remove("selected");
+            }
+
+            selectedButton = this;
+            this.classList.add("selected");
         })
     }    
-        
 })
 
 //adds the flip class to the memory-cards

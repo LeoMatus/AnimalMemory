@@ -57,7 +57,7 @@ body{
 #difficulties{
     display: flex;
     margin: 0 auto;
-    justify-content: center;
+    justify-content: left;
 }
 
 .dif{
@@ -73,9 +73,22 @@ body{
 .dif.green{
     color: green;
     background-color: black;
+    margin-left: 8%;
 }
 
 .dif.yellow{
     color: yellow;
     background-color: black;
+}
+
+.remaining{
+    margin-top: 2%;
+    font-size: larger;
+    margin-left: 50%;
+    position: relative;
+    font-weight: bolder;
+}
+
+.dif.selected{
+    font-size: 20px;
 }
