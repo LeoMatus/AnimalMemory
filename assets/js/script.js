@@ -7,8 +7,13 @@ let attempts = 0;
 let maxAttempts = 20;
 let selectedButton;
 
+
+
+
 document.addEventListener("DOMContentLoaded", function(){
     let buttons = document.getElementsByTagName("button");
+
+    updateRemainingAttempts(maxAttempts - attempts);
 
     for(let button of buttons){
         button.addEventListener("click", function(){
@@ -24,11 +29,18 @@ document.addEventListener("DOMContentLoaded", function(){
                 selectedButton.classList.remove("selected");
             }
 
+
+            updateRemainingAttempts(maxAttempts - attempts);
             selectedButton = this;
             this.classList.add("selected");
+            restartGame();
         })
     }    
 })
+
+function updateRemainingAttempts(remainingAttempts){   
+    document.getElementById("remaining-attempts").innerText = remainingAttempts;
+}
 
 //adds the flip class to the memory-cards
 function cardFlip() {
@@ -48,6 +60,7 @@ function cardFlip() {
         console.log(firstCard, secondCard);
 
         checkCardsForMatch() 
+        updateRemainingAttempts(maxAttempts - attempts);
     }
 
 }
@@ -89,13 +102,17 @@ function gameOver(){
     console.log("game over");
 }
 
-//function restartGame{
-    //unflip cards
+function restartGame(){
+    unflipAllCards();
 
     //shuffle cards
 
     //add event handler
-//}
+}
+
+function unflipAllCards(){
+    cards.forEach(card => card.classList.remove("flip"));
+}
 
 (function shuffleBoard(){
     cards.forEach (card => {
