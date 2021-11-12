@@ -53,3 +53,29 @@ body{
 .front-face{
     transform: rotateY(180deg);
 }
+
+#difficulties{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.dif{
+    margin: 10px;
+    padding: 10px;
+}
+
+.dif.red{
+    color: red;
+    background-color: black;
+}
+
+.dif.green{
+    color: green;
+    background-color: black;
+}
+
+.dif.yellow{
+    color: yellow;
+    background-color: black;
+}

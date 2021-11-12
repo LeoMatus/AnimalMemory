@@ -4,8 +4,27 @@ let hasFlippedCard = false;
 let firstCard, secondCard;
 let boardLock = false;
 let attempts = 0;
-let maxAttempts = 2;
+let maxAttempts = 20;
 
+document.addEventListener("DOMContentLoaded", function(){
+    let buttons = document.getElementsByTagName("button");
+
+    for(let button of buttons){
+        button.addEventListener("click", function(){
+
+            console.log(this.classList)
+        
+            if (this.classList.contains("green")){
+                maxAttempts = 20;
+            } else if(this.classList.contains("yellow")){
+                maxAttempts = 15;
+            } else if(this.classList.contains("red")){
+                maxAttempts = 10;
+            }
+        })
+    }    
+        
+})
 
 //adds the flip class to the memory-cards
 function cardFlip() {
@@ -27,9 +46,6 @@ function cardFlip() {
         checkCardsForMatch() 
     }
 
-    if(attempts === maxAttempts){
-        gameOver()
-    }
 }
 
 function checkCardsForMatch() {
@@ -38,9 +54,12 @@ function checkCardsForMatch() {
         //if cards match
         disableMatchingCards();
     } else{
-        if(attempts != maxAttempts)
         attempts += 1;
-        cardUnflip();
+        if(attempts < maxAttempts){
+            cardUnflip();
+        } else{
+            gameOver()
+        }
     }  
 }
 
@@ -62,9 +81,17 @@ function cardUnflip() {
 } 
 
 function gameOver(){
-    boardlock = true;
+    cards.forEach(card => card.removeEventListener('click', cardFlip));
     console.log("game over");
 }
+
+//function restartGame{
+    //unflip cards
+
+    //shuffle cards
+
+    //add event handler
+//}
 
 (function shuffleBoard(){
     cards.forEach (card => {
