@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function(){
             } else if(this.classList.contains("red")){
                 maxAttempts = 10;
             }
+
             if(selectedButton != undefined){
                 selectedButton.classList.remove("selected");
             }
@@ -32,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
             selectedButton = this;
             this.classList.add("selected");
+
             restartGame();
         })
     }    
@@ -64,7 +66,7 @@ function cardFlip() {
 
 }
 
-function checkCardsForMatch() {
+function checkCardsForMatch(test) {
     
     if (firstCard.dataset.image === secondCard.dataset.image){
         //if cards match
@@ -101,25 +103,17 @@ function gameOver(){
 }
 
 function restartGame(){
-
     attempts = 0;
-
     boardLock = true;
 
     unflipAllCards();
+
     setTimeout(() =>{
-
         shuffleBoard();
-
         activateCards();
-
         updateRemainingAttempts(maxAttempts);
-
         boardLock = false;
-
-    },1000);
-
-    
+    },1000);    
 }
 
 function activateCards(){

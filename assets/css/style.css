@@ -58,12 +58,6 @@ body{
     transition: transform 0s;
 }
 
-#difficulties{
-    display: flex;
-    margin: 0 auto;
-    justify-content: left;
-}
-
 .dif{
     margin: 10px;
     padding: 10px;
@@ -88,11 +82,37 @@ body{
 .remaining{
     margin-top: 2%;
     font-size: larger;
-    margin-left: 50%;
-    position: relative;
     font-weight: bolder;
+    float: right;
+    margin-right: 7%;
 }
 
 .dif.selected{
     font-size: 20px;
+}
+
+@media screen and (min-width:2000px){
+    .memory-game{
+        height: 1000px;
+    }
+
+    .remaining{
+        font-size: xx-large;
+    }
+}
+
+@media screen and (max-width:500px){
+    .front-face, .back-face{
+        padding: 2px;
+    }
+
+    .remaining{
+        margin-left: 25%;
+        float: none;
+        margin-right: 0;
+    }
+
+    .dif.green{
+        margin-left: 20%;
+    }
 }
