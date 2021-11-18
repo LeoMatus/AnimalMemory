@@ -101,9 +101,9 @@ body{
     }
 }
 
-@media screen and (max-width:500px){
+@media screen and (max-width:700px){
     .front-face, .back-face{
-        padding: 2px;
+        padding: 1px;
     }
 
     .remaining{
@@ -114,5 +114,9 @@ body{
 
     .dif.green{
         margin-left: 20%;
+    }
+    
+    .memory-game{
+        width: 99%;
     }
 }
