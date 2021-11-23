@@ -75,6 +75,12 @@ The shark image was taken from [wallpaperflare](https://www.wallpaperflare.com/b
 
 The polar bear picture was taken from [wallpapaerflare](https://www.wallpaperflare.com/photography-animals-polar-bears-wallpaper-crvng)
 
+The killer whale picture was taken from [wallpapercrave](https://wallpapercave.com/killer-whales-wallpaper)
+
+The elk picture was taken from [Google](https://www.google.com/search?q=elk+hd&rlz=1C1BYYL_svSE950SE950&sxsrf=AOaemvIst3pRFCP_Ex8XrENevfFy16dx-g:1637635304638&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjdwOr0uq30AhXC_7sIHe1PC-UQ_AUoAXoECAEQAw&biw=1280&bih=609&dpr=1.5#imgrc=Th86XTS_JO1lEM)
+
+The panda picture was taken from [wallpapercrave](https://wallpapercave.com/panda-wallpaper-for-desktop)
+
 The picture of the parrots was taken from [piterest](https://www.pinterest.com/pin/452752568799940859/?d=t&mt=login)
 
 The cards backside image was taken from [thepanicroomonline](https://thepanicroomonline.net/products/welcome-to-the-jungle-puzzle-cards)

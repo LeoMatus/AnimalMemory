@@ -9,11 +9,13 @@ body{
     background: rgb(13 56 13 / 68%);
 }
 
+/*Page heading*/
 .header{
     margin: 10px;
     text-align: center;
 }
 
+/*The memory game board*/
 .memory-game{
     width: 90%;
     height: 500px;
@@ -24,6 +26,7 @@ body{
     perspective: 1000px;
 }
 
+/*styling for the memory cards and their animations*/
 .memory-card{
     width: 12.5%;
     height: 33.333%;
@@ -33,11 +36,13 @@ body{
     transition: transform .5s;
 }
 
+/*The click animation*/
 .memory-card:active{
     transform: scale(.97);
     transition: transform .1s;
 }
 
+/*the flip animation*/
 .memory-card.flip{
     transform: rotateY(180deg);
 }
@@ -58,6 +63,7 @@ body{
     transition: transform 0s;
 }
 
+/*The difficulty buttons*/
 .dif{
     margin: 10px;
     padding: 10px;
@@ -79,6 +85,7 @@ body{
     background-color: black;
 }
 
+/*The remaining attempts counter*/
 .remaining{
     margin-top: 2%;
     font-size: larger;
@@ -91,6 +98,7 @@ body{
     font-size: 20px;
 }
 
+/*media queries for small and large screens*/
 @media screen and (min-width:2000px){
     .memory-game{
         height: 1000px;
