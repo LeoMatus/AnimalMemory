@@ -37,9 +37,9 @@ document.addEventListener("DOMContentLoaded", function(){
             this.classList.add("selected");
 
             restartGame();
-        })
+        });
     }    
-})
+});
 
 /**
  * shows the number of attempts left on the web page
@@ -68,7 +68,7 @@ function cardFlip() {
         secondCard = this;
         console.log(firstCard, secondCard);
 
-        checkCardsForMatch() 
+        checkCardsForMatch(); 
         updateRemainingAttempts(maxAttempts - attempts);
     }
 
